@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import { Form } from "react-router-dom";
+import MainForm from "./components/MainForm";
+import Post from "./model/model";
+import PostList from "./components/PostList";
 
-function App() {
+const App = () => {
+  const [title, setTitle] = useState<string>('') // Заголовок поста
+  const [note, setNote] = useState<string>('') // Описание поста
+  const [posts, setPosts] = useState<Post[]>([]) // Массив постов
+
+  const addPost = (event: React.FormEvent) => { // Добавление поста
+    event.preventDefault()
+    if (title && note) {
+      setPosts([...posts, { id: Date.now(), title: title, post: note }])
+    }
+    setTitle("")
+    setNote("")
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="App__logo">Форма отправки записей:</h1>
+      <MainForm note={note} setNote={setNote} title={title} setTitle={setTitle} addPost={addPost} />
+      <PostList posts={posts} setPosts={setPosts} />
     </div>
+
   );
-}
+};
 
 export default App;
