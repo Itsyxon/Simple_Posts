@@ -11,19 +11,26 @@
     padding: 12px 10px;
     font-size: 20px;
     margin: 5px 0;
-    
+
 }
 
-.mainform__button{
+.mainform__button {
     width: 40%;
-    height: 34px;
+    height: 40px;
     background-color: #111;
     color: white;
     font-size: 20px;
     border: 1px solid rgb(99, 85, 85);
     cursor: pointer;
     margin-top: 10px;
+    transition: .2s all;
+    border-radius: 10px;
 }
+
+.mainform__button:active {
+    background-color: crimson;
+}
+
 .mainform__input:focus {
     outline: none;
 }
@@ -33,6 +40,7 @@
     .mainform {
         width: 95%;
     }
+
     .posts {
         width: 100%;
     }

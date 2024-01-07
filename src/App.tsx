@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./App.css";
-import { Form } from "react-router-dom";
 import MainForm from "./components/MainForm";
 import Post from "./model/model";
 import PostList from "./components/PostList";
@@ -21,7 +20,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="App__logo">Форма отправки записей:</h1>
+      <h1 className="App__logo">Создание постов:</h1>
       <MainForm note={note} setNote={setNote} title={title} setTitle={setTitle} addPost={addPost} />
       <PostList posts={posts} setPosts={setPosts} />
     </div>
