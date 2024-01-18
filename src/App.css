@@ -27,7 +27,7 @@
     margin: 15px;
     padding: 20px;
     justify-content: center;
-    background: linear-gradient(180deg, rgb(46, 44, 44), rgb(22, 20, 20));
+    background-color: rgb(46, 44, 44);
     align-items: center;
     box-shadow: 0 1px 1px black;
 }
@@ -52,6 +52,10 @@
     transition: .1s all;
 }
 
-.icon:hover {
-    color: brown;
+.delete__icon:hover {
+    color: rgb(202, 11, 11);
+}
+
+.edit__icon:hover {
+    color: rgb(241, 84, 12);
 }
